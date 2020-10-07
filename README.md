@@ -2,7 +2,7 @@
 
 ## Installing Wekinator
 
-WEKINATOR : Version 2.1.0.4
+Version 2.1.0.4
 
 www.wekinator.org
 
