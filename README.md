@@ -16,7 +16,7 @@ Run `python main.py` to execute.
 
 ### 3. Run the python input script
 
-This script periodically fetches data from an API. You will need to use pipenv, a python package manager, to install your dependencies. 
+The main script periodically fetches data from an API. You will need to use pipenv, a python package manager, to install your dependencies. 
 
 To install pipenv run `brew install pipenv` for Mac. For other platforms, run `pip install --user pipenv`. Run `pipenv install` to install all packages, or crudely: `curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python`. 
 
