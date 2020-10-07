@@ -6,7 +6,9 @@ WEKINATOR : Version 2.1.0.4
 
 www.wekinator.org
 
-To run: use a terminal and run the command: `java -jar WekiMini.jar`.
+Head to the `wekinator-executable` directory.
+
+To run, use a terminal to cd to the appropriate folder and run the command: `java -jar WekiMini.jar`.
 
 ## Git Cheatsheet
 
