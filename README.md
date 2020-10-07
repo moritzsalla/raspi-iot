@@ -1,5 +1,7 @@
 # Raspberry Pi Wekinator Client
 
+Ongoing work…
+
 ## Installation Guise
 
 ### 1. Clone this repository to your raspberry pi
