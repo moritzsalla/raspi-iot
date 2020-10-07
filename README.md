@@ -2,7 +2,7 @@
 
 Ongoing work…
 
-## Installation Guise
+## Installation Guide
 
 ### 1. Clone this repository to your raspberry pi
 
