@@ -1,5 +1,13 @@
 # Raspberry Pi Wekinator Client
 
+## Getting the Wekinator Executeable to run on Raspi
+
+WEKINATOR : Version 2.1.0.4
+
+www.wekinator.org
+
+To run: use a terminal and run the command: `java -jar WekiMini.jar`.
+
 ## Git Cheatsheet
 
 Push: `git push origin master`  
