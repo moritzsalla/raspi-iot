@@ -1,6 +1,6 @@
 # Raspberry Pi Wekinator Client
 
-## Getting the Wekinator Executeable to run on Raspi
+## Installing Wekinator
 
 WEKINATOR : Version 2.1.0.4
 
@@ -8,7 +8,7 @@ www.wekinator.org
 
 Head to the `wekinator-executable` directory.
 
-To run, use a terminal to cd to the appropriate folder and run the command: `java -jar WekiMini.jar`.
+To run wekinator on Raspberry Pi, use a terminal to cd to the appropriate folder and run the command: `java -jar WekiMini.jar`.
 
 ## Git Cheatsheet
 
