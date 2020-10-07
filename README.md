@@ -2,11 +2,11 @@
 
 ## Installation Guise
 
-#### 1. Clone this repository to your raspberry pi
+### 1. Clone this repository to your raspberry pi
 
 `git clone https://github.com/moritzsalla/raspi-wekinator-client`
 
-#### 2. Install Wekinator
+### 2. Install Wekinator
 
 Head to the `wekinator-executable` directory.
 
@@ -14,7 +14,7 @@ To run Wekinator (2.1.0.4) on Raspberry Pi, use a terminal to cd to the appropri
 
 Run `python main.py` to execute.
 
-#### 3. Run the python input script
+### 3. Run the python input script
 
 This script periodically fetches data from an API. You will need to use pipenv, a python package manager, to install your dependencies. 
 
@@ -22,7 +22,7 @@ To install pipenv run `brew install pipenv` for Mac. For other platforms, run `p
 
 If pipenv can't be found, run `sudo pip install pipenv`.
 
-#### 4. Run the output script
+### 4. Run the output script
 
 Under construction…
 
