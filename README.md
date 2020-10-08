@@ -18,9 +18,9 @@ Run `python main.py` to execute.
 
 ### 3. Run the python input script
 
-The main script periodically fetches data from an API and sends them to the serial port via OSC. You will need to use pipenv, a python package manager, to install your dependencies. 
+The main script periodically fetches data from an API and sends them to the serial port via OSC. You will need to use pipenv, a python package manager, to install your dependencies.
 
-To install pipenv run `brew install pipenv` for Mac. For other platforms, run `pip install --user pipenv`. Run `pipenv install` to install all packages, or crudely: `curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python`. 
+To install pipenv run `brew install pipenv` for Mac. For other platforms, run `pip install --user pipenv`. Run `pipenv install` to install all packages, or crudely: `curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python`.
 
 If pipenv can't be found, run `sudo pip install pipenv`.
 
@@ -36,3 +36,9 @@ Pull: `git fetch origin`
 Merge changes: `git merge origin/master`
 
 Make commits case sensitive: `git config core.ignorecase false`
+
+## To–Do
+
+- [ ] Create Server that receives POST requests
+- [ ] Setup simple output without Wekinator
+- [ ] Decide what to do with data. Save them in database? Periodically train wekinator?
