@@ -41,6 +41,7 @@ Make commits case sensitive: `git config core.ignorecase false`
 
 ## To–Do
 
+- [ ] Remove wekinator executable, add download description to readme
 - [ ] Create Server that receives POST requests
 - [ ] Setup simple output without Wekinator
 - [ ] Decide what to do with data. Save them in database? Periodically train wekinator?
