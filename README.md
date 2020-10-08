@@ -30,6 +30,10 @@ If pipenv can't be found, run `sudo pip install pipenv`.
 
 Under construction…
 
+## Controling Wekinator via OSC
+
+http://www.wekinator.org/detailed-instructions/#Customizing_DTW8217s_behavior
+
 ## Git Cheatsheet
 
 Clone: `git clone url`  
@@ -41,9 +45,8 @@ Make commits case sensitive: `git config core.ignorecase false`
 
 ## To–Do
 
-- [ ] Remove wekinator executable, add download description to readme
 - [ ] Create Server that receives POST requests
-- [ ] Setup simple output without Wekinator
+- [x] Setup simple output without Wekinator
 - [ ] Decide what to do with data. Save them in database? Periodically train wekinator?
 
 ## Content
@@ -54,6 +57,7 @@ Make commits case sensitive: `git config core.ignorecase false`
 ├── image.jpg
 ├── in
 │   ├── api
+│   │   ├── README.md
 │   │   ├── api
 │   │   │   ├── __init__.py
 │   │   │   ├── __pycache__
@@ -74,16 +78,23 @@ Make commits case sensitive: `git config core.ignorecase false`
 │   │   ├── Pipfile.lock
 │   │   ├── __pycache__
 │   │   │   └── OSC.cpython-38.pyc
-│   │   ├── main.py
-│   │   └── main3.py
-│   └── processing_in_test
-│       └── processing_in_test.pde
+│   │   └── main.py
+│   ├── processing_in_test
+│   │   ├── README.md
+│   │   └── processing_in_test.pde
+│   └── wekinator_control_osc
+│       ├── OSC.py
+│       ├── OSC.pyc
+│       ├── README.md
+│       └── main.py
 ├── out
 │   └── processing_output_test
+│       ├── README.md
 │       ├── processing_output_test.pde
 │       └── sketch.properties
 └── wekinator
     ├── executable
+    │   ├── README.md
     │   ├── WekiMini.jar
     │   └── lib
     │       ├── AbsoluteLayout.jar
@@ -95,13 +106,6 @@ Make commits case sensitive: `git config core.ignorecase false`
     │       ├── xmlpull-1.1.3.1.jar
     │       ├── xpp3_min-1.1.4c.jar
     │       └── xstream-1.4.8.jar
-    └── project
-        ├── current
-        │   ├── currentData.arff
-        │   └── models
-        │       └── model0.xml
-        ├── inputConfig.xml
-        ├── outputConfig.xml
-        ├── project.wekproj
-        └── saved
+    └── wekinator_project
+        └── README.md
 ```
