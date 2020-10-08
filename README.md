@@ -1,6 +1,6 @@
 # Raspberry Pi Wekinator Client
 
-Ongoing work…
+Monorepo. Contains server, wekinator executable and output script. Ongoing work…
 
 ![Image](./image.jpg)
 
