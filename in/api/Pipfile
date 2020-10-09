@@ -6,6 +6,9 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+fastapi = "*"
+uvicorn = "*"
+python-osc = "*"
 
 [requires]
 python_version = "3.8"

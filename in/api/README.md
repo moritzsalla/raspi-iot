@@ -1,3 +1,7 @@
-A django server that receives PUT requests and sends the respective data to Wekiantor via OSC.
+API that receives POST request and sends data to wekinator via osc
 
-To control Wekinator, look here: http://www.wekinator.org/detailed-instructions/#Customizing_DTW8217s_behavior
+To run:  
+`pipenv run uvicorn main:app --reload`
+
+Example query:  
+`http://127.0.0.1:8000/items/5?q=somequery`
