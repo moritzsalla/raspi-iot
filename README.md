@@ -77,6 +77,15 @@ Stop & remove container:
 docker rm --force myimage
 ```
 
+To expose ports:
+```
+# single:
+docker run -p <host_port>:<container_port>
+
+# multiple:
+docker run -p <host_port1>:<container_port1> -p <host_port2>:<container_port2>
+```
+
 ### Git
 
 Clone: `git clone url`  
