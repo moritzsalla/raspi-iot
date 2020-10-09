@@ -8,6 +8,9 @@ docker build -t myimage .
 To run:  
 ```
 docker run -d --name mycontainer -p 80:80 myimage
+
+# to run in dev mode (without docker)
+uvicorn main:app --reload
 ```
 
 Example query:  

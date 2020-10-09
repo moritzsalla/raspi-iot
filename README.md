@@ -46,9 +46,13 @@ sudo sh get-docker.sh
 sudo usermod -aG docker [user_name]
 sudo usermod -aG docker Pi
 
+# test
 docker version
 docker info
 docker run hello-world
+
+# check out port app is running at 
+sudo docker ps
 ```
 
 ## Git Cheatsheet
