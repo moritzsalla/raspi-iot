@@ -34,6 +34,23 @@ Under construction…
 
 http://www.wekinator.org/detailed-instructions/#Customizing_DTW8217s_behavior
 
+## Installing Docker on Raspi
+
+https://phoenixnap.com/kb/docker-on-raspberry-pi
+
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker [user_name]
+sudo usermod -aG docker Pi
+
+docker version
+docker info
+docker run hello-world
+```
+
 ## Git Cheatsheet
 
 Clone: `git clone url`  
@@ -58,28 +75,11 @@ Make commits case sensitive: `git config core.ignorecase false`
 ├── image.jpg
 ├── in
 │   ├── api
+│   │   ├── Dockerfile
 │   │   ├── README.md
-│   │   ├── api
-│   │   │   ├── __init__.py
-│   │   │   ├── __pycache__
-│   │   │   │   ├── __init__.cpython-37.pyc
-│   │   │   │   ├── settings.cpython-37.pyc
-│   │   │   │   ├── urls.cpython-37.pyc
-│   │   │   │   └── wsgi.cpython-37.pyc
-│   │   │   ├── asgi.py
-│   │   │   ├── settings.py
-│   │   │   ├── urls.py
-│   │   │   └── wsgi.py
-│   │   ├── db.sqlite3
-│   │   └── manage.py
-│   ├── osc_api_client
-│   │   ├── OSC.py
-│   │   ├── OSC.pyc
-│   │   ├── Pipfile
-│   │   ├── Pipfile.lock
-│   │   ├── __pycache__
-│   │   │   └── OSC.cpython-38.pyc
-│   │   └── main.py
+│   │   └── app
+│   │       ├── main.py
+│   │       └── wekinator.py
 │   ├── processing_in_test
 │   │   ├── README.md
 │   │   └── processing_in_test.pde
