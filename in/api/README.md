@@ -2,8 +2,8 @@ API that receives POST request and sends data to wekinator via osc
 
 To install docker environment:  
 ```
-docker build -t myimage .`
-``
+docker build -t myimage .
+```
 
 To run:  
 ```
