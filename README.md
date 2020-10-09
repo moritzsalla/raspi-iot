@@ -114,4 +114,4 @@ ping raspberrypi.local
 - [x] Create Server that receives POST requests
 - [x] Setup simple output without Wekinator
 - [x] Decide what to do with data. Save them in database? Periodically train wekinator?
-- [ ] Figure out how to communicate between dockerized container and wekinator
+- [ ] Figure out how to expose 6448 port in docker for OSC connection to wekinator
