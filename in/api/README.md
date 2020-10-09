@@ -24,3 +24,4 @@ More information about deploying fastAPI on Raspi: https://fastapi.tiangolo.com/
 - [ ] Add functionality to control wekinator via OSC, ex. retrain every time data is received.
 - [ ] Clean up get requests
 - [ ] Fix: wekiantor isn't receiving input on Wek
+- [ ] Figure out how to communicate between dockerized container and wekinator
