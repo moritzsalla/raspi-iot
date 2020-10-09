@@ -34,7 +34,9 @@ Under construction…
 
 http://www.wekinator.org/detailed-instructions/#Customizing_DTW8217s_behavior
 
-## Installing Docker on Raspi
+## Cheatsheets
+
+### Docker
 
 https://phoenixnap.com/kb/docker-on-raspberry-pi
 
@@ -55,7 +57,27 @@ docker run hello-world
 sudo docker ps
 ```
 
-## Git Cheatsheet
+Build image:
+```
+docker build -t myimage .
+```
+
+Run image:
+```
+docker run -d --name myimage -p 80:80 myimage 
+
+'''
+asks Docker to forward traffic incoming on the host’s port 80 to the container’s port 80
+https://docs.docker.com/get-started/part2/#run-your-image-as-a-container
+'''
+```
+
+Stop & remove container:
+```
+docker rm --force myimage
+```
+
+### Git
 
 Clone: `git clone url`  
 Push: `git push origin master`  
@@ -64,9 +86,18 @@ Merge changes: `git merge origin/master`
 
 Make commits case sensitive: `git config core.ignorecase false`
 
-## Raspi Cheatsheet
+### Raspberry Pi
 
-Ping: `ping raspberrypi.local`
+SSH into pi using mac terminal:
+
+```
+ssh pi@raspberrypi.local
+```
+
+Ping: 
+```
+ping raspberrypi.local
+```
 
 ## To–Do
 
