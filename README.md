@@ -62,9 +62,10 @@ Make commits case sensitive: `git config core.ignorecase false`
 
 ## To–Do
 
-- [ ] Create Server that receives POST requests
+- [ ] Set up docker on raspi
+- [x] Create Server that receives POST requests
 - [x] Setup simple output without Wekinator
-- [ ] Decide what to do with data. Save them in database? Periodically train wekinator?
+- [x] Decide what to do with data. Save them in database? Periodically train wekinator?
 - [ ] Remove Django credentials from Github, add to gitignore
 
 ## Content
