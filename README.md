@@ -49,6 +49,11 @@ sudo usermod -aG docker Pi
 docker version
 docker info
 docker run hello-world
+
+for admin issues, see this: https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket
+
+saving and loading docker images:
+https://stackoverflow.com/questions/23935141/how-to-copy-docker-images-from-one-host-to-another-without-using-a-repository
 ```
 
 ## Git Cheatsheet
