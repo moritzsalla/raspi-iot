@@ -34,7 +34,9 @@ Under construction…
 
 http://www.wekinator.org/detailed-instructions/#Customizing_DTW8217s_behavior
 
-## Installing Docker on Raspi
+## Cheatsheets
+
+### Docker
 
 https://phoenixnap.com/kb/docker-on-raspberry-pi
 
@@ -46,12 +48,45 @@ sudo sh get-docker.sh
 sudo usermod -aG docker [user_name]
 sudo usermod -aG docker Pi
 
+# test
 docker version
 docker info
 docker run hello-world
+
+# check out port app is running at 
+sudo docker ps
 ```
 
-## Git Cheatsheet
+Build image:
+```
+docker build -t myimage .
+```
+
+Run image:
+```
+docker run -d --name myimage -p 80:80 myimage 
+
+'''
+asks Docker to forward traffic incoming on the host’s port 80 to the container’s port 80
+https://docs.docker.com/get-started/part2/#run-your-image-as-a-container
+'''
+```
+
+Stop & remove container:
+```
+docker rm --force myimage
+```
+
+To expose ports:
+```
+# single:
+docker run -p <host_port>:<container_port>
+
+# multiple:
+docker run -p <host_port1>:<container_port1> -p <host_port2>:<container_port2>
+```
+
+### Git
 
 Clone: `git clone url`  
 Push: `git push origin master`  
@@ -60,58 +95,23 @@ Merge changes: `git merge origin/master`
 
 Make commits case sensitive: `git config core.ignorecase false`
 
-## Raspi Cheatsheet
+### Raspberry Pi
 
-Ping: `ping raspberrypi.local`
+SSH into pi using mac terminal:
+
+```
+ssh pi@raspberrypi.local
+```
+
+Ping: 
+```
+ping raspberrypi.local
+```
 
 ## To–Do
 
-- [ ] Set up docker on raspi
+- [x] Set up docker on raspi
 - [x] Create Server that receives POST requests
 - [x] Setup simple output without Wekinator
 - [x] Decide what to do with data. Save them in database? Periodically train wekinator?
-- [ ] Remove Django credentials from Github, add to gitignore
-
-## Content
-
-```
-.
-├── README.md
-├── image.jpg
-├── in
-│   ├── api
-│   │   ├── Dockerfile
-│   │   ├── README.md
-│   │   └── app
-│   │       ├── main.py
-│   │       └── wekinator.py
-│   ├── processing_in_test
-│   │   ├── README.md
-│   │   └── processing_in_test.pde
-│   └── wekinator_control_osc
-│       ├── OSC.py
-│       ├── OSC.pyc
-│       ├── README.md
-│       └── main.py
-├── out
-│   └── processing_output_test
-│       ├── README.md
-│       ├── processing_output_test.pde
-│       └── sketch.properties
-└── wekinator
-    ├── executable
-    │   ├── README.md
-    │   ├── WekiMini.jar
-    │   └── lib
-    │       ├── AbsoluteLayout.jar
-    │       ├── FastDTW1.1.0.jar
-    │       ├── JSON.jar
-    │       ├── swing-layout-1.0.4.jar
-    │       ├── swing-worker-1.2.jar
-    │       ├── weka.jar
-    │       ├── xmlpull-1.1.3.1.jar
-    │       ├── xpp3_min-1.1.4c.jar
-    │       └── xstream-1.4.8.jar
-    └── wekinator_project
-        └── README.md
-```
+- [ ] Figure out how to expose 6448 port in docker for OSC connection to wekinator

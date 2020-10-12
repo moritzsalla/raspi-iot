@@ -2,7 +2,7 @@ FROM python:3.7
 
 RUN pip install fastapi uvicorn python-osc
 
-EXPOSE 80
+EXPOSE 80 6448
 
 COPY ./app /app
 
