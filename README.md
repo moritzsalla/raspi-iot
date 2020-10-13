@@ -53,18 +53,20 @@ docker version
 docker info
 docker run hello-world
 
-# check out port app is running at 
+# check out port app is running at
 sudo docker ps
 ```
 
 Build image:
+
 ```
 docker build -t myimage .
 ```
 
 Run image:
+
 ```
-docker run -d --name myimage -p 80:80 myimage 
+docker run -d --name myimage -p 80:80 myimage
 
 '''
 asks Docker to forward traffic incoming on the host’s port 80 to the container’s port 80
@@ -73,17 +75,25 @@ https://docs.docker.com/get-started/part2/#run-your-image-as-a-container
 ```
 
 Stop & remove container:
+
 ```
 docker rm --force myimage
 ```
 
 To expose ports:
+
 ```
 # single:
 docker run -p <host_port>:<container_port>
 
 # multiple:
 docker run -p <host_port1>:<container_port1> -p <host_port2>:<container_port2>
+```
+
+Delete all Docker images:
+
+```
+docker iamge prune
 ```
 
 ### Git
@@ -103,7 +113,8 @@ SSH into pi using mac terminal:
 ssh pi@raspberrypi.local
 ```
 
-Ping: 
+Ping:
+
 ```
 ping raspberrypi.local
 ```
