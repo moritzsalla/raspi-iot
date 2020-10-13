@@ -1,6 +1,6 @@
 FROM python:3.7
 
-RUN pip install fastapi uvicorn python-osc
+RUN pip install fastapi uvicorn sense-hat 
 
 EXPOSE 80
 

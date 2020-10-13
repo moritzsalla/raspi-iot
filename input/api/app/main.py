@@ -17,12 +17,12 @@ class User():
 def read_root():
       return {"Server": "Online"}
 
-sense.clear(255,255,255)
-
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Optional[str] = None):
       User.sentiment = float(item_id)
-      wekinator.sendVal(User.sentiment)
+      
+      print(sense)
+      sense.clear(255,255,255)
       
       result = {"item_id": item_id, "q": q}
       return result
