@@ -1,7 +1,8 @@
 FROM armhf/ubuntu
 
 # install python3
-RUN apt-get update && apt-get install -y python3.9
+RUN apt-get update && apt-get install -y python3.9 python3-pip python-pip
+RUN pip install -U pip
 
 # install build dependencies
 RUN apt-get install -y curl python-numpy python-pil
