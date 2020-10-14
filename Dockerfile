@@ -13,7 +13,8 @@ RUN curl -LO  https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librti
 RUN dpkg -i librtimulib-dev_7.2.1-3_armhf.deb librtimulib-utils_7.2.1-3_armhf.deb librtimulib7_7.2.1-3_armhf.deb python-rtimulib_7.2.1-3_armhf.deb python-sense-hat_2.1.0-1_armhf.deb
 
 # upgrade pip
-RUN pip install -U pip
+RUN sudo -H pip3 install --upgrade pip
+RUN sudo -H pip2 install --upgrade pip
 RUN pip install fastapi uvicorn
 
 ADD test.py /test.py
