@@ -126,3 +126,37 @@ ping raspberrypi.local
 - [x] Setup simple output without Wekinator
 - [x] Decide what to do with data. Save them in database? Periodically train wekinator?
 - [ ] Figure out how to expose 6448 port in docker for OSC connection to wekinator
+
+# API
+
+API that receives POST request and sends data to wekinator via osc
+
+To install docker environment:
+
+```
+docker build -t myimage .
+```
+
+To run:
+
+```
+docker run -d --name mycontainer -p 80:80 myimage
+
+# to run in dev mode (without docker)
+uvicorn main:app --reload
+```
+
+Example query:
+
+```
+http://127.0.0.1:8000/items/5?q=somequery
+```
+
+More information about deploying fastAPI on Raspi: https://fastapi.tiangolo.com/deployment/
+
+## To–Do
+
+- [ ] Add functionality to control wekinator via OSC, ex. retrain every time data is received.
+- [ ] Clean up get requests
+- [ ] Fix: wekiantor isn't receiving input on Wek
+- [ ] Figure out how to communicate between dockerized container and wekinator
