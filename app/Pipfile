@@ -8,7 +8,6 @@ verify_ssl = true
 [packages]
 uvicorn = "*"
 fastapi = "*"
-sense-hat = "*"
 
 [requires]
 python_version = "3.8"
