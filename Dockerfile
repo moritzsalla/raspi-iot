@@ -1,6 +1,6 @@
 FROM python:3.6
 
-RUN apt-get update && apt-get install -y curl python-numpy python-pil 
+RUN apt-get update && apt-get install -y curl python-numpy python-pil
 WORKDIR /tmp
 
 RUN curl -LO  https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librtimulib-dev_7.2.1-3_armhf.deb \

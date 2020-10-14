@@ -6,6 +6,16 @@ Monorepo containing server, wekinator executable and output script. Ongoing work
 
 ## Installation using Docker
 
+https://github.com/bmwshop/sensehat
+
+```
+docker build -t sensehat .
+docker run --privileged --name sensehat -ti sensehat bash
+python test.py
+```
+
+Basic commands:
+
 ```shell
 # build image from dockerfile
 docker build -t myimage .
