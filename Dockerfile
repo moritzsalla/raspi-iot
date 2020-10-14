@@ -1,6 +1,6 @@
 FROM armhf/ubuntu
 
-RUN apt-get update && apt-get install -y curl python-numpy python-pil
+RUN apt-get update && apt-get install -y curl python-numpy python-pil python-pip
 
 RUN curl -LO  https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librtimulib-dev_7.2.1-3_armhf.deb \
       && curl -LO https://archive.raspberrypi.org/debian/pool/main/r/rtimulib//librtimulib-utils_7.2.1-3_armhf.deb \
