@@ -129,20 +129,26 @@ ping raspberrypi.local
 
 # API
 
-API that receives POST request and sends data to wekinator via osc
-
-To install docker environment:
-
-```
+```shell
+# build image from dockerfile
 docker build -t myimage .
-```
 
-To run:
-
-```
+# run image as container
 docker run -d --name mycontainer -p 80:80 myimage
 
-# to run in dev mode (without docker)
+# save image (contains history, larger file size!)
+docker save myimage:latest | gzip > myimage_latest.tar.gz
+
+# load image
+docker load > myimage_latest.tar.gz
+
+# export container (doesn't contain history)
+docker export mycontainer | gzip > mycontainer.tar.gz
+
+# import container
+docker import mycontainer.tar
+
+# to run app in dev mode (without docker)
 uvicorn main:app --reload
 ```
 

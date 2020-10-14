@@ -1,1 +1,2 @@
-myimage_latest.tar.gz filter=lfs diff=lfs merge=lfs -text
+myimage.tar.gz filter=lfs diff=lfs merge=lfs -text
+mycontainer.tar.gz filter=lfs diff=lfs merge=lfs -text
