@@ -1,7 +1,7 @@
 FROM armhf/ubuntu
 
 # install build dependencies
-RUN apt-get update && apt-get install -y curl python-numpy python-pil python-pip && pip install --upgrade pip & pip install pipenv
+RUN apt-get update && apt-get install -y curl python-numpy python-pil python-pip
 
 RUN curl -LO  https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librtimulib-dev_7.2.1-3_armhf.deb \
       && curl -LO https://archive.raspberrypi.org/debian/pool/main/r/rtimulib//librtimulib-utils_7.2.1-3_armhf.deb \
@@ -18,6 +18,7 @@ RUN apt-get clean
 COPY ./app /app
 
 # install python requirements
+RUN pip install --upgrade pip & pip install pipenv
 RUN cd ./app && pipenv lock --requirements > requirements.txt && pip install -r /app/requirements.txt
 
 EXPOSE 80
