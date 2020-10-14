@@ -22,11 +22,8 @@ docker save myimage:latest | gzip > myimage_latest.tar.gz
 docker load < myimage_latest.tar.gz
 
 # export container (doesn't contain history)
-<<<<<<< HEAD
 docker export mycontainer > mycontainer.tar
 # gzipped
-=======
->>>>>>> parent of 6075a44... minor
 docker export mycontainer | gzip > mycontainer.tar.gz
 
 # import container
