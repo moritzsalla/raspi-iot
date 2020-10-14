@@ -14,12 +14,19 @@ docker build -t myimage .
 docker run -d --name mycontainer -p 80:80 myimage
 
 # save image (contains history, larger file size!)
+docker save myimage > myimage.tar
+# gzipped
 docker save myimage:latest | gzip > myimage_latest.tar.gz
 
 # load image
-docker load > myimage_latest.tar.gz
+docker load < myimage_latest.tar.gz
 
 # export container (doesn't contain history)
+<<<<<<< HEAD
+docker export mycontainer > mycontainer.tar
+# gzipped
+=======
+>>>>>>> parent of 6075a44... minor
 docker export mycontainer | gzip > mycontainer.tar.gz
 
 # import container
