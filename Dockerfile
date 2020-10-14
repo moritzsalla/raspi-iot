@@ -1,7 +1,14 @@
 FROM armhf/ubuntu
 
+# install python3
+RUN apt-get update \
+      && apt-get install -y python3-pip python3-dev \
+      && cd /usr/local/bin \
+      && ln -s /usr/bin/python3 python \
+      && pip3 install --upgrade pip
+
 # install build dependencies
-RUN apt-get update && apt-get install -y curl python-numpy python-pil python-pip
+RUN apt-get install -y curl python-numpy python-pil
 
 RUN curl -LO  https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librtimulib-dev_7.2.1-3_armhf.deb \
       && curl -LO https://archive.raspberrypi.org/debian/pool/main/r/rtimulib//librtimulib-utils_7.2.1-3_armhf.deb \
@@ -18,7 +25,6 @@ RUN apt-get clean
 COPY ./app /app
 
 # install python requirements
-RUN pip install --upgrade pip
 RUN pip install fastapi uvicorn
 
 EXPOSE 80
