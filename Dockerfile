@@ -2,9 +2,9 @@ FROM armhf/ubuntu
 
 # install python3
 RUN apt-get update \
-      && apt-get install -y python3-pip python3-dev \
+      && apt-get install -y python3-pip python3.8 \
       && cd /usr/local/bin \
-      && ln -s /usr/bin/python3 python \
+      && ln -s /usr/bin/python3.8 python \
       && pip3 install --upgrade pip
 
 # install build dependencies
