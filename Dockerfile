@@ -2,9 +2,9 @@ FROM armhf/ubuntu
 
 # install python3
 RUN apt-get update && \
-      apt-get install python3.8 && \
+      apt-get install python3.9 && \
       apt-get install python3-pip && \
-      apt-get install python3.8-dev
+      apt-get install python3.9-dev
 
 # install build dependencies
 RUN apt-get install -y curl python-numpy python-pil
