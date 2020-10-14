@@ -18,6 +18,7 @@ RUN apt-get clean
 COPY ./app /app
 
 # install python requirements
+RUN pip install --upgrade pip
 RUN pip install fastapi uvicorn
 
 EXPOSE 80
