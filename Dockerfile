@@ -17,7 +17,7 @@ RUN apt-get clean
 COPY ./app /app
 
 # install python requirements
-RUN pip install pipenv && cd ./app && pipenv lock --requirements > requirements.txt && pip install -r /app/requirements.txt
+RUN pip3 install pipenv && cd ./app && pipenv lock --requirements > requirements.txt && pip install -r /app/requirements.txt
 
 EXPOSE 80
 
