@@ -1,7 +1,7 @@
 FROM armhf/ubuntu
 
 # install python3
-RUN apt-get update && apt-get install -y python3.9 python3-pip python3-dev
+RUN apt-get update && apt-get install -y python3.9
 
 # install build dependencies
 RUN apt-get install -y curl python-numpy python-pil
@@ -21,7 +21,7 @@ RUN apt-get clean
 COPY ./app /app
 
 # install python requirements
-RUN pip install fastapi uvicorn
+RUN pip3 install fastapi uvicorn
 
 EXPOSE 80
 
