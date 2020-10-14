@@ -4,6 +4,8 @@ RUN pip install pipenv
 
 COPY ./app /app
 
+RUN git clone https://github.com/RPi-Distro/RTIMULib/ RTIMU
+
 RUN cd ./app && pipenv lock --requirements > requirements.txt
 
 RUN pip install -r /app/requirements.txt

@@ -4,6 +4,56 @@ Monorepo containing server, wekinator executable and output script. Ongoing work
 
 ![Image](./image.jpg)
 
+## Installation using Docker
+
+```shell
+# build image from dockerfile
+docker build -t myimage .
+
+# run image as container
+docker run -d --name mycontainer -p 80:80 myimage
+
+# save image (contains history, larger file size!)
+docker save myimage:latest | gzip > myimage_latest.tar.gz
+
+# load image
+docker load > myimage_latest.tar.gz
+
+# export container (doesn't contain history)
+docker export mycontainer | gzip > mycontainer.tar.gz
+
+# import container
+docker import mycontainer.tar
+
+# show logs
+docker logs mycontainer --follow
+
+# to run app in dev mode (without docker)
+uvicorn main:app --reload
+```
+
+Example query:
+
+```
+http://127.0.0.1:8000/items/5?q=somequery
+```
+
+More information about deploying fastAPI on Raspi: https://fastapi.tiangolo.com/deployment/
+
+## To–Do
+
+- [x] Set up docker on raspi
+- [x] Create Server that receives POST requests
+- [x] Setup simple output without Wekinator
+- [x] Decide what to do with data. Save them in database? Periodically train wekinator?
+- [ ] Figure out how to expose 6448 port in docker for OSC connection to wekinator
+- [ ] Add functionality to control wekinator via OSC, ex. retrain every time data is received.
+- [ ] Clean up get requests
+- [ ] Fix: wekiantor isn't receiving input on Wek
+- [ ] Figure out how to communicate between dockerized container and wekinator
+
+# Obsolete documentation
+
 ## Installation Guide
 
 ### 1. Clone this repository to your raspberry pi
@@ -118,51 +168,3 @@ Ping:
 ```
 ping raspberrypi.local
 ```
-
-## To–Do
-
-- [x] Set up docker on raspi
-- [x] Create Server that receives POST requests
-- [x] Setup simple output without Wekinator
-- [x] Decide what to do with data. Save them in database? Periodically train wekinator?
-- [ ] Figure out how to expose 6448 port in docker for OSC connection to wekinator
-
-# API
-
-```shell
-# build image from dockerfile
-docker build -t myimage .
-
-# run image as container
-docker run -d --name mycontainer -p 80:80 myimage
-
-# save image (contains history, larger file size!)
-docker save myimage:latest | gzip > myimage_latest.tar.gz
-
-# load image
-docker load > myimage_latest.tar.gz
-
-# export container (doesn't contain history)
-docker export mycontainer | gzip > mycontainer.tar.gz
-
-# import container
-docker import mycontainer.tar
-
-# to run app in dev mode (without docker)
-uvicorn main:app --reload
-```
-
-Example query:
-
-```
-http://127.0.0.1:8000/items/5?q=somequery
-```
-
-More information about deploying fastAPI on Raspi: https://fastapi.tiangolo.com/deployment/
-
-## To–Do
-
-- [ ] Add functionality to control wekinator via OSC, ex. retrain every time data is received.
-- [ ] Clean up get requests
-- [ ] Fix: wekiantor isn't receiving input on Wek
-- [ ] Figure out how to communicate between dockerized container and wekinator
