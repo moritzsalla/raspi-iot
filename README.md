@@ -12,6 +12,16 @@ $ export FLASK_ENV=development
 $ flask run
 ```
 
+# Docker
+
+```
+docker build -t sensehat .
+docker run --privileged --name sensehat -ti sensehat bash
+python test.py
+```
+
+<hr />
+
 ## Installation using Docker
 
 https://github.com/bmwshop/sensehat
