@@ -2,12 +2,12 @@
 API that makes it possible to interact
 with Wekinator.
 '''
-# from sense_hat import SenseHat
+from sense_hat import SenseHat
 from flask import Flask, request, jsonify
 
-# import test
+import test
 
-# sense = SenseHat()
+sense = SenseHat()
 app = Flask(__name__)
 
 @app.route("/")
@@ -19,4 +19,5 @@ def hello():
 def handle_data():
     val = request.args.get('val')
     val = float(val)
+    sense.clear(val, val, val)
     return '''<h1>Sentiment: {}</h1>'''.format(val)
