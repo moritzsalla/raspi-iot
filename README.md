@@ -6,10 +6,12 @@ Monorepo containing server, wekinator executable and output script. Ongoing work
 
 # Flask app
 
+Runs on localhost.
+
 ```shell
 export FLASK_APP=main.py
 export FLASK_ENV=development
-flask run --host=0.0.0.0
+sudo python2 main.py
 ```
 
 # Docker
