@@ -9,6 +9,7 @@ RUN curl -LO  https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librti
       && curl -LO https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/python-rtimulib_7.2.1-3_armhf.deb
 
 RUN dpkg -i librtimulib-dev_7.2.1-3_armhf.deb librtimulib-utils_7.2.1-3_armhf.deb librtimulib7_7.2.1-3_armhf.deb python-rtimulib_7.2.1-3_armhf.deb
+RUN git clone https://github.com/RPi-Distro/RTIMULib/ RTIMU
 
 RUN pip install fastapi uvicorn && pip install sense-hat
 
