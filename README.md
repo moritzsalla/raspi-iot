@@ -10,6 +10,7 @@ Clone this repository
 
 ```shell
 git clone https://github.com/moritzsalla/REPO_NAME
+cd REPO_NAME
 ```
 
 ### Pipenv (prefered)
