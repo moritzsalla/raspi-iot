@@ -4,6 +4,11 @@ Monorepo containing server, wekinator executable and output script. Ongoing work
 
 ![Image](./image.jpg)
 
+# Flask app
+
+run app:
+´env FLASK_APP=main.py flask run´
+
 ## Installation using Docker
 
 https://github.com/bmwshop/sensehat
