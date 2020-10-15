@@ -10,15 +10,14 @@ RUN curl -LO  https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librti
 
 RUN dpkg -i librtimulib-dev_7.2.1-3_armhf.deb librtimulib-utils_7.2.1-3_armhf.deb librtimulib7_7.2.1-3_armhf.deb python-rtimulib_7.2.1-3_armhf.deb
 
-COPY ./app /app
+# clean up
+RUN rm -f /tmp/*.deb
+RUN apt-get clean
 
+COPY ./app /app
 ENV PYTHONPATH "${PYTHONPATH}:/app/"
 
 RUN cd ./app && pipenv lock --requirements > requirements.txt
 RUN pip install -r requirements.txt
-
-# clean up
-RUN rm -f /tmp/*.deb
-RUN apt-get clean
 
 CMD ["python", "/main.py"]
