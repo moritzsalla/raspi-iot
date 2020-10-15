@@ -17,9 +17,10 @@ RUN apt-get clean
 WORKDIR /
 COPY ./app /app
 
+WORKDIR /app
 RUN pip install pipenv
-RUN cd ./app && pipenv lock --requirements > requirements.txt
-RUN pip install -r requirements.txt
+RUN pipenv lock --requirements > requirements.txt
+RUN pip install 
 
 ENV PYTHONPATH "${PYTHONPATH}:/app/"
 # CMD ["python", "/main.py"]
