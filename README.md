@@ -62,7 +62,7 @@ Which hostname am I running on?
 $ hostname -I
 ```
 
-Example query:
+Example POST request:
 
 ```
 http://127.0.0.1:8000/items/5?q=somequery
