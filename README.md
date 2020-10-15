@@ -6,11 +6,17 @@ Monorepo containing server, wekinator executable and output script. Ongoing work
 
 ## Installation
 
+Clone this repository
+
+```shell
+git clone https://github.com/moritzsalla/REPO_NAME
+```
+
 ### Pipenv (prefered)
 
 ```shell
-cd app/
 pip install pipenv
+cd app/
 pipenv install
 ```
 
@@ -21,8 +27,8 @@ Make sure you are running `python2.7.13`
 To install requirements, run:
 
 ```shell
-cd app/
 pip install pipenv
+cd app/
 pipenv lock --requirements > requirements.txt
 pip install -r requirements.txt
 ```
