@@ -7,7 +7,6 @@ verify_ssl = true
 
 [packages]
 flask = "*"
-sense-hat = "*"
 
 [requires]
 python_version = "2.7"
