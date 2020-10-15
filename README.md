@@ -9,7 +9,7 @@ Monorepo containing server, wekinator executable and output script. Ongoing work
 ```shell
 export FLASK_APP=main.py
 export FLASK_ENV=development
-flask run
+flask run --host=0.0.0.0
 ```
 
 # Docker
