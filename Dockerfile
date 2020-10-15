@@ -14,10 +14,11 @@ RUN dpkg -i librtimulib-dev_7.2.1-3_armhf.deb librtimulib-utils_7.2.1-3_armhf.de
 RUN rm -f /tmp/*.deb
 RUN apt-get clean
 
+WORKDIR /
 COPY ./app /app
-ENV PYTHONPATH "${PYTHONPATH}:/app/"
 
 RUN cd ./app && pipenv lock --requirements > requirements.txt
 RUN pip install -r requirements.txt
 
+ENV PYTHONPATH "${PYTHONPATH}:/app/"
 CMD ["python", "/main.py"]

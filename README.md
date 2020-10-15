@@ -6,8 +6,11 @@ Monorepo containing server, wekinator executable and output script. Ongoing work
 
 # Flask app
 
-run app:
-´env FLASK_APP=main.py flask run´
+```
+$ export FLASK_APP=main.py
+$ export FLASK_ENV=development
+$ flask run
+```
 
 ## Installation using Docker
 
