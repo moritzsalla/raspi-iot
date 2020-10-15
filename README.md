@@ -11,7 +11,7 @@ Runs on localhost.
 ```shell
 export FLASK_APP=main.py
 export FLASK_ENV=development
-sudo python2 main.py
+sudo python2 main.py # make sure you are running 2.7
 ```
 
 # Docker
@@ -19,7 +19,7 @@ sudo python2 main.py
 ```shell
 docker build -t sensehat .
 docker run --privileged --name sensehat -ti sensehat bash
-python test.py
+python main.py
 ```
 
 <hr />
