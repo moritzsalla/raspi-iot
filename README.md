@@ -13,6 +13,8 @@ $ git clone https://github.com/moritzsalla/REPO_NAME
 $ cd REPO_NAME
 ```
 
+Make sure you are running `python2.7.13`
+
 ### Pipenv (prefered)
 
 ```
@@ -22,8 +24,6 @@ $ pipenv install
 ```
 
 ### Crude
-
-Make sure you are running `python2.7.13`
 
 To install requirements, run:
 
