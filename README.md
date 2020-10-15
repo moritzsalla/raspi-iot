@@ -16,7 +16,7 @@ pipenv install
 
 ### Pip
 
-Make sure you are running `python2.7`
+Make sure you are running `python2.7.13`
 
 To install requirements, run:
 
