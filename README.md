@@ -21,7 +21,7 @@ $ cd app/
 $ pipenv install
 ```
 
-### Pip
+### Crude
 
 Make sure you are running `python2.7.13`
 
