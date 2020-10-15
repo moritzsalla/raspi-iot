@@ -6,15 +6,15 @@ Monorepo containing server, wekinator executable and output script. Ongoing work
 
 # Flask app
 
-```
-$ export FLASK_APP=main.py
-$ export FLASK_ENV=development
-$ flask run
+```shell
+export FLASK_APP=main.py
+export FLASK_ENV=development
+flask run
 ```
 
 # Docker
 
-```
+```shell
 docker build -t sensehat .
 docker run --privileged --name sensehat -ti sensehat bash
 python test.py

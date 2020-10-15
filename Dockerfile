@@ -23,4 +23,4 @@ RUN pipenv lock --requirements > requirements.txt
 RUN pip install -r requirements.txt
 
 ENV PYTHONPATH "${PYTHONPATH}:/app/"
-# CMD ["python", "/main.py"]
+CMD FLASK_APP=main.py && export FLASK_ENV=production && flask run
