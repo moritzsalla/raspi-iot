@@ -41,5 +41,5 @@ RUN pip3 install sense-hat flask
 
 # run server
 EXPOSE 80
-RUN FLASK_APP=main.py && export FLASK_ENV=production
+RUN export FLASK_APP=main.py && export FLASK_ENV=production
 CMD ["flask", "run"]
