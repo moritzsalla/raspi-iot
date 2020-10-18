@@ -13,17 +13,19 @@ $ git clone https://github.com/moritzsalla/REPO_NAME
 $ cd REPO_NAME
 ```
 
-Make sure you are running `python2.7.13`
+### Docker (prefered)
 
-### Pipenv (prefered)
+Based on Protik77's [dockerfile](https://hub.docker.com/r/protik77/python3-sensehat).
 
 ```
-$ pip install pipenv
-$ cd app/
-$ pipenv install
+$ docker build -t sensehat .
+$ docker run --privileged --name sensehat -ti sensehat bash
+$ python main.py
 ```
 
 ### Crude
+
+Make sure you are running `python2.7.13`
 
 To install requirements, run:
 
@@ -33,18 +35,6 @@ $ cd app/
 $ pipenv lock --requirements > requirements.txt
 $ pip install -r requirements.txt
 ```
-
-### Docker
-
-Compatibility issues. Might resolve some time later!
-
-```
-$ docker build -t sensehat .
-$ docker run --privileged --name sensehat -ti sensehat bash
-$ python main.py
-```
-
-Reference Dockerfile: https://github.com/bmwshop/sensehat
 
 ## Running the Flask server
 
