@@ -1,5 +1,6 @@
-FROM python:2.7.13
+FROM arm32v7/python:2.7.13-jessie AS base
 
+# isntall global dependencies
 RUN apt-get update && apt-get install -y curl python-numpy python-pil
 WORKDIR /tmp
 
@@ -14,16 +15,15 @@ RUN dpkg -i librtimulib-dev_7.2.1-3_armhf.deb librtimulib-utils_7.2.1-3_armhf.de
 
 # clean up
 RUN rm -f /tmp/*.deb
-RUN apt-get cleanp
+RUN apt-get clean
 
-WORKDIR /
+# lock and install python requirements
 COPY ./app /app
-
 WORKDIR /app
 RUN pip install pipenv && pipenv lock --requirements > requirements.txt
 RUN pip install -r requirements.txt
 
+# run
 ENV PYTHONPATH "${PYTHONPATH}:/app/"
-
 RUN FLASK_APP=main.py && export FLASK_ENV=production
 CMD ["flask", "run"]
