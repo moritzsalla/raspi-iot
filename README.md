@@ -15,12 +15,12 @@ $ cd REPO_NAME
 
 ### Docker (prefered)
 
-Based on Protik77's [dockerfile](https://hub.docker.com/r/protik77/python3-sensehat).
+Based on Protik77's python3-based [dockerfile](https://hub.docker.com/r/protik77/python3-sensehat).
 
 ```
-$ docker build -t sensehat .
-$ docker run --privileged --name sensehat -ti sensehat bash
-$ python main.py
+$ docker pull moritzsalla/raspi-flask-sensehat-protik
+$ docker run --privileged --name mycontainer -ti moritzsalla/raspi-flask-sensehat-protik bash
+$ python3 main.py
 ```
 
 ### Crude
@@ -55,5 +55,8 @@ $ hostname -I
 Example POST request:
 
 ```
-http://127.0.0.1:8000/items/5?q=somequery
+# run tests:
+http://127.0.0.1:8000/test
+# start server:
+http://127.0.0.1:8000/sentiment?val=255
 ```

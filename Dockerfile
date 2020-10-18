@@ -10,18 +10,14 @@ RUN apt-get update \
       python3-pil \
       python3-pip
 
-# do all the installation in /tmp directory
+# install sensehat dependency
 WORKDIR /tmp
-
-# get all required libraries
 ARG RTIMULIB_VERSION=7.2.1-3
 RUN curl -LO https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librtimulib-dev_${RTIMULIB_VERSION}_armhf.deb \
       && curl -LO https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librtimulib-utils_${RTIMULIB_VERSION}_armhf.deb \
       && curl -LO https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librtimulib7_${RTIMULIB_VERSION}_armhf.deb \
       && curl -LO https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/python3-rtimulib_${RTIMULIB_VERSION}_armhf.deb \
       && curl -LO https://archive.raspberrypi.org/debian/pool/main/p/python-sense-hat/python3-sense-hat_2.2.0-1_armhf.deb
-
-# install the required libraries
 RUN dpkg -i \
       librtimulib-dev_${RTIMULIB_VERSION}_armhf.deb \
       librtimulib-utils_${RTIMULIB_VERSION}_armhf.deb \
@@ -39,5 +35,7 @@ COPY ./app /app
 WORKDIR /app
 RUN pip3 install sense-hat flask
 
-# command to run if no command specified
-CMD ["python3", "test.py"]
+# run server
+EXPOSE 80
+RUN FLASK_APP=main.py && export FLASK_ENV=production
+CMD ["flask", "run"]
