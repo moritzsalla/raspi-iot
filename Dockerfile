@@ -3,7 +3,7 @@ LABEL maintainer="Moritz Salla <moritz.salla@hotmail.de>"
 
 # needed for automated build in docker hub.
 # for details, see: https://github.com/docker/hub-feedback/issues/1261
-# COPY qemu-arm-static /usr/bin
+COPY qemu-arm-static /usr/bin
 
 # install the necessary software
 RUN apt-get update \
