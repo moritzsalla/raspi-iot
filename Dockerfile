@@ -1,4 +1,4 @@
-FROM arm32v7/python:2.7.13-jessie AS base
+FROM arm32v7/python:2.7.13-jessie
 
 # isntall global dependencies
 RUN apt-get update && apt-get install -y curl python-numpy python-pil
