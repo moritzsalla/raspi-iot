@@ -1,7 +1,9 @@
 FROM arm32v7/python:2.7.13-jessie
+LABEL maintainer="Moritz Salla <moritz.salla@hotmail.de>"
 
 # isntall global dependencies
 RUN apt-get update && apt-get install -y curl python-numpy python-pil
+RUN pip install --upgrade pip
 WORKDIR /tmp
 
 # install sensehat dependencies
