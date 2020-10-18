@@ -40,6 +40,7 @@ WORKDIR /app
 RUN pip3 install sense-hat flask
 
 # run server
-EXPOSE 80
+RUN export LC_ALL=C.UTF-8 && export LANG=C.UTF-8
 RUN export FLASK_APP=main.py && export FLASK_ENV=production
+EXPOSE 80
 CMD ["flask", "run"]
