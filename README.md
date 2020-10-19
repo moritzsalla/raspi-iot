@@ -55,8 +55,12 @@ $ hostname -I
 Example POST request:
 
 ```
+# find your raspi's address:
+$ hostname -I
+
 # run tests:
 http://127.0.0.1:8000/test
+
 # start server:
 http://127.0.0.1:8000/sentiment?val=255
 ```
