@@ -19,7 +19,7 @@ def run_tests():
 	return "Running tests"
 
 @app.route('/color')
-def handle_data():
+def set_color():
     r = request.args.get('r')
     g = request.args.get('g')
     b = request.args.get('b')
@@ -27,7 +27,7 @@ def handle_data():
     g = int(g)
     b = int(b)
     sense.clear(r, g, b)
-    return '''Sentiment: {}'''.format(val)
+    return '''R: {r}<br />G: {g}<br />B: {b}'''.format(r, g, b)
 
 if __name__ == '__main__':
     app.run(debug=False, port=80, host='0.0.0.0')
