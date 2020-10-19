@@ -18,11 +18,15 @@ def run_tests():
 	tests.matrix()
 	return "Running tests"
 
-@app.route('/sentiment')
+@app.route('/color')
 def handle_data():
-    val = request.args.get('val')
-    val = int(val)
-    sense.clear(val, val, val)
+    r = request.args.get('r')
+    g = request.args.get('g')
+    b = request.args.get('b')
+    r = int(r)
+    g = int(g)
+    b = int(b)
+    sense.clear(r, g, b)
     return '''Sentiment: {}'''.format(val)
 
 if __name__ == '__main__':
