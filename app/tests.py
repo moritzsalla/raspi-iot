@@ -9,7 +9,7 @@ sense = SenseHat()
 
 print("running tests")
 
-t = 0.2
+t = 0.4
 
 def matrix():
 	try:

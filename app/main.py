@@ -15,19 +15,16 @@ def hello():
 
 @app.route('/test')
 def run_tests():
-	tests.matrix()
+	# tests.matrix()
 	return "Running tests"
+
+# http://localhost/color?r=120&g=120&b=120
 
 @app.route('/color')
 def set_color():
-    r = request.args.get('r')
-    g = request.args.get('g')
-    b = request.args.get('b')
-    r = int(r)
-    g = int(g)
-    b = int(b)
-    sense.clear(r, g, b)
-    return '''R: {r}<br />G: {g}<br />B: {b}'''.format(r, g, b)
+    args = request.args.to_dict()
+    sense.clear(args.r, args.g, args.b)
+    return args
 
 if __name__ == '__main__':
     app.run(debug=False, port=80, host='0.0.0.0')
