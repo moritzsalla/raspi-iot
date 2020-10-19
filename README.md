@@ -19,7 +19,7 @@ Based on Protik77's python3-based [dockerfile](https://hub.docker.com/r/protik77
 
 ```
 $ docker pull moritzsalla/raspi-flask-sensehat-protik
-$ docker run --privileged --name mycontainer -ti moritzsalla/raspi-flask-sensehat-protik bash
+$ docker run --privileged --name mycontainer -p 80:80 -ti moritzsalla/raspi-iot:latest bash
 $ python3 main.py
 ```
 
@@ -36,15 +36,7 @@ $ pipenv lock --requirements > requirements.txt
 $ pip install -r requirements.txt
 ```
 
-## Running the Flask server
-
-Runs locally. Make sure to connect to the same wifi.
-
-```
-$ export FLASK_APP=main.py
-$ export FLASK_ENV=development
-$ sudo python2 main.py # make sure you are running 2.7
-```
+# Misc
 
 Which hostname am I running on?
 
@@ -61,6 +53,6 @@ $ hostname -I
 # run tests:
 http://127.0.0.1:8000/test
 
-# start server:
-http://127.0.0.1:8000/sentiment?val=255
+# set color values:
+http://192.168.0.22/color?r=120&g=120&b=255
 ```

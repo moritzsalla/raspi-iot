@@ -21,8 +21,8 @@ def run_tests():
 @app.route('/color')
 def set_color():
     args = request.args.to_dict()
-    sense.clear(args["r"], args["g"], args["b"])
+    sense.clear(int(args["r"]), int(args["g"]), int(args["b"]))
     return args
 
 if __name__ == '__main__':
-    app.run(debug=False, port=80, host='0.0.0.0')
+    app.run(debug=True, port=80, host='0.0.0.0')
