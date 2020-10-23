@@ -4,10 +4,12 @@ with Wekinator.
 '''
 from sense_hat import SenseHat
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import tests
 
 sense = SenseHat()
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def hello():
