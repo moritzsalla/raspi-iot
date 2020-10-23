@@ -1,10 +1,26 @@
-# Raspberry Pi Wekinator Client
+# Raspberry Pi Ambient Interface
 
-Monorepo containing server, wekinator executable and output script. Ongoing work…
-
-![Image](./image.jpg)
+This installation provides a flask server which lets you communicate between browsers within your local network and the sense-hat. It can be used for visualizing data. In order to maintain a modular interface, the API end–points provide no functionality beyond that of the sensehat's. All processing should therefore be done on the client side.
 
 ## Installation
+
+Connect the Raspberry Pi to your wifi through LAN or wifi, up to you.
+
+### Docker
+
+Make sure you have docker installed.
+
+```
+$ docker pull moritzsalla/raspi-flask-sensehat-protik:latest
+$ docker run --privileged --name mycontainer -p 80:80 -ti moritzsalla/raspi-iot:latest bash
+$ python3 main.py
+```
+
+Based on Protik77's python3-based [dockerfile](https://hub.docker.com/r/protik77/python3-sensehat).
+
+### Crude
+
+**I've been having major issues with the sense-hat package conflicting with other packages. You'll have to find and set up a python3 version that works for you.**
 
 Clone this repository:
 
@@ -13,46 +29,67 @@ $ git clone https://github.com/moritzsalla/REPO_NAME
 $ cd REPO_NAME
 ```
 
-### Docker (prefered)
+Make sure you are running the correct python version.
 
-Based on Protik77's python3-based [dockerfile](https://hub.docker.com/r/protik77/python3-sensehat).
-
-```
-$ docker pull moritzsalla/raspi-flask-sensehat-protik
-$ docker run --privileged --name mycontainer -p 80:80 -ti moritzsalla/raspi-iot:latest bash
-$ python3 main.py
-```
-
-### Crude
-
-Make sure you are running `python2.7.13`
-
-To install requirements, run:
+Install requirements:
 
 ```
-$ pip install pipenv
-$ cd app/
-$ pipenv lock --requirements > requirements.txt
-$ pip install -r requirements.txt
+$ sudo apt-get update \
+      && apt-get install --no-install-recommends --no-install-suggests -y \
+      ca-certificates \
+      curl \
+      python3-numpy \
+      python3-pil \
+      python3-pip
+
+$ curl -LO https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librtimulib-dev_7.2.1-3_armhf.deb \
+      && curl -LO https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librtimulib-utils_7.2.1-3_armhf.deb \
+      && curl -LO https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/librtimulib7_7.2.1-3_armhf.deb \
+      && curl -LO https://archive.raspberrypi.org/debian/pool/main/r/rtimulib/python3-rtimulib_7.2.1-3_armhf.deb \
+      && curl -LO https://archive.raspberrypi.org/debian/pool/main/p/python-sense-hat/python3-sense-hat_2.2.0-1_armhf.deb
+$ dpkg -i \
+      librtimulib-dev_7.2.1-3_armhf.deb \
+      librtimulib-utils_7.2.1-3_armhf.deb \
+      librtimulib7_7.2.1-3_armhf.deb \
+      python3-rtimulib_7.2.1-3_armhf.deb \
+      python3-sense-hat_2.2.0-1_armhf.deb
+
+# cleanup
+$ sudo rm -f *.deb \
+      && apt-get clean \ 
+      && sudo rm -rf /var/lib/apt/lists/*
+
+$ pip3 install sense-hat flask flask-cors
 ```
 
-# Misc
+# Running the server
 
-Which hostname am I running on?
+Figure out which hostname your Raspberry Pi has:
 
 ```
 $ hostname -I
 ```
 
-Example POST request:
-
+Navigate to this address. The installation has been successful if you see your Raspberry Pi flashing up.
 ```
-# find your raspi's address:
-$ hostname -I
-
-# run tests:
 http://127.0.0.1:8000/test
+```
 
-# set color values:
-http://192.168.0.22/color?r=120&g=120&b=255
+Open this page from browser in your local network. The site will provide you an overview of the API.
+```
+http://127.0.0.1:8000/
+```
+
+# Folder structure
+
+```
+.
+├── Dockerfile
+├── README.md
+├── app
+│   ├── main.py
+│   └── tests.py
+└── hooks
+    ├── post_checkout
+    └── pre_build
 ```
