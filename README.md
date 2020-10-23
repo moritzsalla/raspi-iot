@@ -20,7 +20,7 @@ Based on Protik77's python3-based [dockerfile](https://hub.docker.com/r/protik77
 
 ### Crude
 
-**I've been having major issues with the sense-hat package conflicting with other packages. You'll have to find and set up a python3 version that works for you.**
+**⚠️ I've been having major issues with the sense-hat package conflicting with other packages. Although its possible to find an approppreate Python version, its a buggy road and I strongly advise against it.**
 
 Clone this repository:
 
