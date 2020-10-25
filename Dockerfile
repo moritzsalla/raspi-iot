@@ -37,7 +37,7 @@ RUN rm -f /tmp/*.deb \
 # lock and install python requirements
 COPY ./app /app
 WORKDIR /app
-RUN pip3 install sense-hat flask flask-cors
+RUN pip3 install sense-hat flask flask-cors pyopenssl
 
 # run server
 EXPOSE 80
