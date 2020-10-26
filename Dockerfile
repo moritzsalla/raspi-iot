@@ -1,4 +1,4 @@
-FROM arm32v7/debian:jessie-slim AS base
+FROM arm32v7/debian:jessie-slim
 LABEL maintainer="Moritz Salla <moritz.salla@hotmail.de>"
 
 # needed for automated build in docker hub.
@@ -37,7 +37,7 @@ RUN rm -f /tmp/*.deb \
 # lock and install python requirements
 COPY ./app /app
 WORKDIR /app
-RUN python3 -m pip install sense-hat flask flask-cors 
+RUN python3 -m pip install sense-hat flask flask-cors
 
 # run server
 EXPOSE 80
