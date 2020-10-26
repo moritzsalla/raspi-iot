@@ -6,7 +6,6 @@ from sense_hat import SenseHat
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import tests
-import ssl
 
 sense = SenseHat()
 app = Flask(__name__)
@@ -44,9 +43,5 @@ def set_color():
     else:
         return "No query string received. Try something like 'http://192.168.0.24/color?r=120&g=120&b=255'.", 200
 
-ctx = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
-ctx.load_cert_chain('cert.pem', 'key.pem')
-
 if __name__ == '__main__':
-    context = ('local.crt', 'local.key')
-    app.run(debug=True, host='0.0.0.0', port=443, ssl_context=ctx)
+    app.run(debug=True, host='0.0.0.0', port=443, ssl_context='adhoc')
