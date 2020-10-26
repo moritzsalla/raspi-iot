@@ -12,7 +12,9 @@ RUN apt-get update \
       curl \
       python3-numpy \
       python3-pil \
-      python3-pip
+      python3-pip \
+      libssl-dev \
+      openssl
 
 # install sensehat dependency
 WORKDIR /tmp
@@ -37,7 +39,7 @@ RUN rm -f /tmp/*.deb \
 # lock and install python requirements
 COPY ./app /app
 WORKDIR /app
-RUN pip3 install sense-hat flask flask-cors pyopenssl
+RUN python3 -m pip install sense-hat flask flask-cors
 
 # run server
 EXPOSE 80
