@@ -11,8 +11,8 @@ Connect the Raspberry Pi to your wifi through LAN or wifi, up to you.
 Make sure you have docker installed.
 
 ```
-$ docker pull moritzsalla/raspi-flask-sensehat-protik:latest
-$ docker run --privileged --name mycontainer -p 80:80 -ti moritzsalla/raspi-iot:latest bash
+$ docker pull moritzsalla/raspi-iot:latest
+$ docker run --privileged --name mycontainer -p 443:443 -ti moritzsalla/raspi-iot:latest bash
 $ python3 main.py
 ```
 
@@ -56,7 +56,7 @@ $ dpkg -i \
 
 # cleanup
 $ sudo rm -f *.deb \
-      && apt-get clean \ 
+      && apt-get clean \
       && sudo rm -rf /var/lib/apt/lists/*
 
 $ pip3 install sense-hat flask flask-cors
@@ -71,11 +71,13 @@ $ hostname -I
 ```
 
 Navigate to this address. The installation has been successful if you see your Raspberry Pi flashing up.
+
 ```
 http://127.0.0.1:8000/test
 ```
 
 Open this page from browser in your local network. The site will provide you an overview of the API.
+
 ```
 http://127.0.0.1:8000/
 ```
