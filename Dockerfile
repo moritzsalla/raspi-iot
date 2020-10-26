@@ -12,9 +12,7 @@ RUN apt-get update \
       curl \
       python3-numpy \
       python3-pil \
-      python3-pip \
-      libssl-dev \
-      openssl
+      python3-pip
 
 # install sensehat dependency
 WORKDIR /tmp

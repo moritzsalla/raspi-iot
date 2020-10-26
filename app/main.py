@@ -45,4 +45,4 @@ def set_color():
 
 if __name__ == '__main__':
     context = ('local.crt', 'local.key')
-    app.run(ssl_context=context, debug=True, port=80, host='0.0.0.0')
+    app.run(ssl_context=('cert.pem', 'key.pem'), debug=True, port=80, host='0.0.0.0')
