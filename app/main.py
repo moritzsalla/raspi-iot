@@ -44,4 +44,4 @@ def set_color():
         return "No query string received. Try something like 'http://192.168.0.24/color?r=120&g=120&b=255'.", 200
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=443, ssl_context=('cert.pem', 'key.pem'))
+    app.run(debug=True, host='0.0.0.0', port=443, ssl_context=('cert.pem', 'key.pem')) # port 443 for https
